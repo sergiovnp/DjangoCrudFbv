@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<br>
+
+<div class="container">
+    
+    <h3>Detalle de Persona</h3>
+    <br>
+    
+        {% if persona %}
+        
+        <h5>Id: {{ persona.id }}</h5>
+        <h5>Nombre: {{ persona.nombre }}</h5>
+        <h5>Apellido: {{ persona.apellido }}</h5>
+
+        {% else %}
+            <h3>No hay registros de una Persona para listar...</h3>
+        {% endif %}
+        <br>
+        <a class="btn btn-info btn-sm" href="{% url 'lista' %}" role="button">Listar</a>
+
+</div>
+
+
+{% endblock %}

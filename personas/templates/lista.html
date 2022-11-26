@@ -23,7 +23,7 @@
           <tr>
             <th scope="row">{{persona.id}}</th>
             <td>{{persona.nombre}}</td>
-            <td>{{persona.apellido}}</td>
+            <td><a href='{% url "detalle" persona.id %}' style="text-decoration:none">{{persona.apellido}} </a></td>
           </tr>
         {% endfor %}
         {% else %}
