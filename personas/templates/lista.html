@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<br>
+
+<div class="container">
+    <h3>Lista de Personas</h3>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% if personas %}
+        {% for persona in personas %}
+        
+          <tr>
+            <th scope="row">{{persona.id}}</th>
+            <td>{{persona.nombre}}</td>
+            <td>{{persona.apellido}}</td>
+          </tr>
+        {% endfor %}
+        {% else %}
+            <h3>No hay registros para listar...</h3>
+        {% endif %}
+        </tbody>
+      </table>
+
+</div>
+
+
+{% endblock %}
