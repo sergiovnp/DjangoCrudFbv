@@ -21,7 +21,11 @@
             <h3>No hay registros de una Persona para listar...</h3>
         {% endif %}
         <br>
-        <a class="btn btn-info btn-sm" href="{% url 'lista' %}" role="button">Listar</a>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a class="btn btn-info" href="{% url 'lista' %}" role="button">Listar</a>
+            <a class="btn btn-primary" href="{% url 'editar' persona.id %}" role="button">Editar</a>
+            <a class="btn btn-danger" href="{% url 'lista' %}" role="button">Eliminar</a>
+          </div>
 
 </div>
 

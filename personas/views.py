@@ -22,3 +22,15 @@ def personaCrear(request):
     
     return render(request, "crear.html", {'form':form})
 
+def personaEditar(request, id):
+    persona = get_object_or_404(Persona, pk=id)
+    form = PersonaForm(request.POST or None, instance=persona)
+
+    if form.is_valid():
+        form.save()
+        return redirect('lista')
+
+    return render(request, "editar.html", {'form':form})
+
+
+
