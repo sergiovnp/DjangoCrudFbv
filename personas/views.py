@@ -33,4 +33,11 @@ def personaEditar(request, id):
     return render(request, "editar.html", {'form':form})
 
 
+def personaEliminar(request, id):
+    persona = get_object_or_404(Persona, pk=id)
 
+    if request.method == 'POST':
+        persona.delete()
+        return redirect('lista')
+
+    return render(request, "eliminar.html", {'persona':persona})

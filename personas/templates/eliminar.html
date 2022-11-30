@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+{% block content %}
+<br>
+
+<div class="container">
+    
+    <h3>Eliminar Persona</h3>
+    <br>
+    {% if persona %}
+    <h5>Seguro que desea eliminar a: {{persona.apellido}}, {{persona.nombre}}</h5>
+    <form action="" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a class="btn btn-info" href="{% url 'lista' %}" role="button">Cancelar</a>
+          </div>
+    </form>
+    {% else %}
+            <h3>No hay registros de una Persona para eliminar...</h3>
+    {% endif %}
+
+</div>
+
+
+{% endblock %}
