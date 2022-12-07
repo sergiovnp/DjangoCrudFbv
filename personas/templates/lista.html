@@ -14,7 +14,10 @@
         <h3>Lista de Personas</h3>
       </div>
       <div class="col">
-
+        <form class="input-group mb-3" action="">
+          <input class="form-control" type="text" name="buscar" placeholder="Apellido">
+          <button class="btn btn-outline-primary">Buscar</button>
+        </form>
       </div>
       <div class="col">
         <a class="btn btn-light" href="{% url 'crear' %}" role="button">Crear Persona</a>

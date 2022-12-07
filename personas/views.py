@@ -4,7 +4,14 @@ from .forms import PersonaForm
 
 # Create your views here.
 def personaLista(request):
-    personas = Persona.objects.all()
+    buscar = request.GET.get('buscar', None)
+
+    if buscar:
+        personas = Persona.objects.all()
+        personas = personas.filter(apellido__icontains=buscar)
+    else:
+        personas = Persona.objects.all()
+
     return render (request, "lista.html", {'personas':personas} )
 
 
